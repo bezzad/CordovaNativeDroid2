@@ -11,10 +11,6 @@ jQueryMobile Template inspired by Material Design
 
 ```git clone https://github.com/Behzadkhosravifar/CordovaNativeDroid2.git```
 
-  **bower**
-
-```bower install nativeDroid2```
-
 # Demo & [Documentation](http://nativedroid.scripter.click)
 
 Basic Elements
