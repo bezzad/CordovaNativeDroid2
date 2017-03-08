@@ -1,7 +1,7 @@
-# Cordova NativeDroid2
+# Cordova [NativeDroid2](https://github.com/wildhaber/nativeDroid2)
 
 
-[![nativeDroid2](http://nativedroid.godesign.ch/material/github_banner.jpg)](https://github.com/wildhaber/nativeDroid2/blob/master/README.md)
+[![nativeDroid2](http://nativedroid.godesign.ch/material/github_banner.jpg)](https://github.com/wildhaber/nativeDroid2)
 
 jQueryMobile Template inspired by Material Design
 
