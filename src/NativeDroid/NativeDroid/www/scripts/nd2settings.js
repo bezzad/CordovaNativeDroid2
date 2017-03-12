@@ -13,5 +13,6 @@ $(function() {
     }
   });
 
-
+  // set inner panel size accourding mobile client size
+  $(document).find(".innerPanel").css("height", window.innerHeight - 64);  
 });

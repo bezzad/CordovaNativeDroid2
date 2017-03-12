@@ -1,87 +1,72 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>nativeDroid II - jQueryMobile Template</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<head>
+    <title>nativeDroid II - jQueryMobile Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../css/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="../../vendor/waves/waves.min.css" />
+    <link rel="stylesheet" href="../../css/nativedroid2.css" />
+    <style>
+        /* Prevent FOUC */
+        body {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-position="fixed" class="wow fadeIn">
+            <a href="#bottomsheetblock" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s'><i class="zmdi zmdi-more-vert"></i></a>
+            <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
+            <h1 class="wow fadeIn" data-wow-delay='0.4s'>Header &amp; Footer</h1>
+        </div>
+        <div class="innerPanel">
+            <nd2-include data-src="/examples/fragments/panel.left.html"></nd2-include>
+            <div data-role="panel" id="bottomsheet" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="false" data-position='bottom' data-display="overlay">
+                <nd2-include data-src="/examples/fragments/bottom.sheet.html"></nd2-include>
+            </div>
 
-		<link rel="stylesheet" href="../../css/font-awesome.min.css" />
-		<link rel="stylesheet" href="../../css/jquery.mobile.min.css" />
-		<link rel="stylesheet" href="../../vendor/waves/waves.min.css" />
-		<link rel="stylesheet" href="../../css/nativedroid2.css" />
+            <div data-role="panel" id="bottomsheetblock" class="ui-bottom-sheet" data-animate="false" data-position='bottom' data-display="overlay">
+                <nd2-include data-src="/examples/fragments/bottom.sheet.html"></nd2-include>
+            </div>
 
-				<style>
-					/* Prevent FOUC */
-					body { opacity: 0; }
-				</style>
+            <div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
+                <h4>Header Example</h4>
+                <p>See an animated example on the top. You can simply remove the WOW.js-Tags to avoid animation.</p>
+                <h4>Footer Example</h4>
+                <p>See bottom :-)</p>
+                <h4>Extra: bottom-sheet</h4>
+                <p>Click the top-right-corner</p>
 
-	</head>
-	<body>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div class="row center-xs">
+                    <div class="col-xs-4">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-mini nd2-btn-icon-block"><i class='zmdi zmdi-edit'></i> edit</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-mini nd2-btn-icon-block"><i class='zmdi zmdi-plus'></i> add</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="box">
+                            <a href="#" class="ui-btn ui-mini nd2-btn-icon-block"><i class='zmdi zmdi-minus'></i> remove</a>
+                        </div>
+                    </div>
+                </div>
 
-		<div data-role="page">
-
-			<nd2-include data-src="/examples/fragments/panel.left.html"></nd2-include>
-
-			<div data-role="panel" id="bottomsheet" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="false" data-position='bottom' data-display="overlay">
-				<nd2-include data-src="/examples/fragments/bottom.sheet.html"></nd2-include>
-			</div>
-
-
-			<div data-role="panel" id="bottomsheetblock" class="ui-bottom-sheet" data-animate="false" data-position='bottom' data-display="overlay">
-				<nd2-include data-src="/examples/fragments/bottom.sheet.html"></nd2-include>
-			</div>
-
-			<div data-role="header" data-position="fixed" class="wow fadeIn">
-				<a href="#bottomsheetblock" class="ui-btn ui-btn-right wow fadeIn" data-wow-delay='1.2s'><i class="zmdi zmdi-more-vert"></i></a>
-				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
-				<h1 class="wow fadeIn" data-wow-delay='0.4s'>Header &amp; Footer</h1>
-			</div>
-
-			<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
-
-				<h4>Header Example</h4>
-				<p>See an animated example on the top. You can simply remove the WOW.js-Tags to avoid animation.</p>
-
-				<h4>Footer Example</h4>
-				<p>See bottom :-)</p>
-
-				<h4>Extra: bottom-sheet</h4>
-				<p>Click the top-right-corner</p>
-
-
-			</div>
-
-			<div data-role="footer" data-position="fixed">
-
-				<div class="row center-xs">
-					<div class="col-xs-4">
-						<div class="box">
-							<a href="#" class="ui-btn ui-mini nd2-btn-icon-block"><i class='zmdi zmdi-edit'></i> edit</a>
-						</div>
-					</div>
-					<div class="col-xs-4">
-						<div class="box">
-							<a href="#" class="ui-btn ui-mini nd2-btn-icon-block"><i class='zmdi zmdi-plus'></i> add</a>
-						</div>
-					</div>
-					<div class="col-xs-4">
-						<div class="box">
-							<a href="#" class="ui-btn ui-mini nd2-btn-icon-block"><i class='zmdi zmdi-minus'></i> remove</a>
-						</div>
-					</div>
-				</div>
-
-
-			</div>
-
-		</div>
-
-
-        <script src="../../scripts/jquery.min.js"></script>
-		<script src="../../scripts/jquery-ui.min.js"></script>
-		<script src="../../scripts/jquery.mobile.min.js"></script>
-		<script src="../../vendor/waves/waves.min.js"></script>
-		<script src="../../scripts/nativedroid2.js"></script>
-		<script src="../../scripts/nd2settings.js"></script>
-
-	</body>
+            </div>
+        </div>
+    </div>
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/jquery-ui.min.js"></script>
+    <script src="../../scripts/jquery.mobile.min.js"></script>
+    <script src="../../vendor/waves/waves.min.js"></script>
+    <script src="../../scripts/nativedroid2.js"></script>
+    <script src="../../scripts/nd2settings.js"></script>
+</body>
 </html>

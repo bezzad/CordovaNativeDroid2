@@ -1,46 +1,40 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>nativeDroid II - jQueryMobile Template</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<head>
+    <title>nativeDroid II - jQueryMobile Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../css/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="../../vendor/wow/animate.css" />
+    <link rel="stylesheet" href="../../css/nativedroid2.css" />
+    <style>
+        /* Prevent FOUC */
+        body {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-position="fixed">
+            <a href="#leftpanel" class="ui-btn ui-btn-left"><i class="fa fa-bars"></i></a>
+            <h1>E-Mail Inbox</h1>
+        </div>
+        <div class="innerPanel">
+            <nd2-include data-src="/examples/fragments/panel.left.html"></nd2-include>
 
-		<link rel="stylesheet" href="../../css/font-awesome.min.css" />
-		<link rel="stylesheet" href="../../css/jquery.mobile.min.css" />
-		<link rel="stylesheet" href="../../vendor/wow/animate.css" />
-		<link rel="stylesheet" href="../../css/nativedroid2.css" />
 
-				<style>
-					/* Prevent FOUC */
-					body { opacity: 0; }
-				</style>
+            <div role="main" class="ui-content" data-inset="false">
+                content here.
 
-	</head>
-	<body>
-
-		<div data-role="page">
-
-			<nd2-include data-src="/examples/fragments/panel.left.html"></nd2-include>
-
-
-			<div data-role="header" data-position="fixed">
-				<a href="#leftpanel" class="ui-btn ui-btn-left"><i class="fa fa-bars"></i></a>
-				<h1>E-Mail Inbox</h1>
-			</div>
-
-			<div role="main" class="ui-content" data-inset="false">
-
-				content here.
-
-			</div>
-
-		</div>
-
-		<script src="../../scripts/jquery.min.js"></script>
-		<script src="../../scripts/jquery-ui.min.js"></script>
-		<script src="../../scripts/jquery.mobile.min.js"></script>
-		<script src="../../vendor/waves/waves.min.js"></script>
-		<script src="../../scripts/nativedroid2.js"></script>
-		<script src="../../scripts/nd2settings.js"></script>
-
-	</body>
+            </div>
+        </div>
+    </div>
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/jquery-ui.min.js"></script>
+    <script src="../../scripts/jquery.mobile.min.js"></script>
+    <script src="../../vendor/waves/waves.min.js"></script>
+    <script src="../../scripts/nativedroid2.js"></script>
+    <script src="../../scripts/nd2settings.js"></script>
+</body>
 </html>
