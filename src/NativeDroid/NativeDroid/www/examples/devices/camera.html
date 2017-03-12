@@ -1,0 +1,106 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+    <!--
+        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
+        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
+    -->
+    <meta content="default-src 'self' data: gap: ms-appdata: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Cordova NativeDroid II - jQueryMobile Template</title>
+
+    <link rel="stylesheet" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../css/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="../../vendor/waves/waves.min.css" />
+    <link rel="stylesheet" href="../../vendor/wow/animate.css" />
+    <link rel="stylesheet" href="../../css/nativedroid2.css" />
+    <style>
+        /* Prevent FOUC */
+        body {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <div data-role="page">
+        <div data-role="header" data-position="fixed" class="wow fadeIn">
+            <a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="zmdi zmdi-menu"></i></a>
+            <h1 class="wow fadeIn" data-wow-delay='0.4s'>Camera</h1>
+        </div>
+
+        <div class="innerPanel">
+            <nd2-include data-src="/examples/fragments/panel.left.html"></nd2-include>
+
+            <div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
+
+                <h3>Camera Test Viewer:</h3>
+                <a href="#" id="btnStartCamera" class="ui-btn ui-btn-raised clr-primary waves-effect waves-button waves-effect waves-button">Start Camera Render</a>
+
+
+                <img id="testCameraBox" />
+            </div>
+        </div>
+    </div>
+    <script src="../../scripts/jquery.min.js"></script>
+    <script src="../../scripts/jquery-ui.min.js"></script>
+    <script src="../../scripts/jquery.mobile.min.js"></script>
+    <script src="../../vendor/waves/waves.min.js"></script>
+    <script src="../../vendor/wow/wow.min.js"></script>
+    <script src="../../scripts/nativedroid2.js"></script>
+    <script src="../../scripts/nd2settings.js"></script>
+    <!--<script src="../../scripts/index.js"></script>-->
+    <script>
+        (function () {
+            "use strict";
+
+            document.addEventListener("deviceready", onDeviceReady, false);
+
+            function onDeviceReady() {
+                //// Handle the Cordova pause and resume events
+                console.log(navigator.camera);
+                navigator.camera.cleanup(onSuccess, onFail);
+            };
+
+            // Show image
+            //
+            /**
+             * Warning: Using DATA_URL is not recommended! The DATA_URL destination
+             * type is very memory intensive, even with a low quality setting. Using it
+             * can result in out of memory errors and application crashes. Use FILE_URI
+             * or NATIVE_URI instead.
+             */
+            $(function () {
+                $(document).find("#btnStartCamera").click(function () {
+                    alert("Starting camera...");
+
+                    navigator.camera.getPicture(onSuccessPick, onFail, {
+                        quality: 25,
+                        destinationType: navigator.camera.DestinationType.DATA_URL
+                    });
+                });
+            });
+
+            function onSuccessPick(imageData) {
+                var image = document.getElementById('testCameraBox');
+                image.src = "data:image/jpeg;base64," + imageData;
+            }
+
+            function onSuccess() {
+                console.log("Camera cleanup success.");
+            }
+
+            function onFail(message) {
+                alert('Failed because: ' + message);
+            }
+        })();
+
+        
+    </script>
+</body>
+</html>
