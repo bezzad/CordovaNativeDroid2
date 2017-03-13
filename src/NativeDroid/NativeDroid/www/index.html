@@ -38,8 +38,6 @@
         <div class="innerPanel">
             <div role="main" class="ui-content" data-inset="false">
                 <p class="wow fadeIn" data-wow-delay='1.51s'>(home)</p>
-                <a href="#" id="btnStartCamera" class="ui-btn ui-btn-raised clr-primary waves-effect waves-button waves-effect waves-button">Start Camera Render</a>
-                <img id="testCameraBox" />
             </div>
         </div>
     </div>
@@ -53,39 +51,7 @@
     <script src="vendor/wow/wow.min.js"></script>
     <script src="scripts/nativedroid2.js"></script>
     <script src="scripts/nd2settings.js"></script>
-
     <script type="text/javascript" src="scripts/index.js"></script>
-    <script>
-        
-        // Show image
-        //
-        /**
-         * Warning: Using DATA_URL is not recommended! The DATA_URL destination
-         * type is very memory intensive, even with a low quality setting. Using it
-         * can result in out of memory errors and application crashes. Use FILE_URI
-         * or NATIVE_URI instead.
-         */
-        $(function () {
-            $(document).find("#btnStartCamera").click(function () {
-                alert("Starting camera...");
 
-                navigator.camera.getPicture(onSuccess, onFail, {
-                    quality: 25,
-                    destinationType: navigator.camera.DestinationType.DATA_URL
-                });
-            });
-        });
-
-        function onSuccess(imageData) {
-            var image = document.getElementById('testCameraBox');
-            image.src = "data:image/jpeg;base64," + imageData;
-        }
-
-        function onFail(message) {
-            alert('Failed because: ' + message);
-        }
-
-        
-    </script>
 </body>
 </html>

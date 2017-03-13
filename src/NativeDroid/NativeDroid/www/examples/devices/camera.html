@@ -47,6 +47,10 @@
             </div>
         </div>
     </div>
+
+    <script type="text/javascript" src="../../cordova.js"></script>
+    <script type="text/javascript" src="../../scripts/platformOverrides.js"></script>
+
     <script src="../../scripts/jquery.min.js"></script>
     <script src="../../scripts/jquery-ui.min.js"></script>
     <script src="../../scripts/jquery.mobile.min.js"></script>
@@ -54,53 +58,6 @@
     <script src="../../vendor/wow/wow.min.js"></script>
     <script src="../../scripts/nativedroid2.js"></script>
     <script src="../../scripts/nd2settings.js"></script>
-    <!--<script src="../../scripts/index.js"></script>-->
-    <script>
-        (function () {
-            "use strict";
-
-            document.addEventListener("deviceready", onDeviceReady, false);
-
-            function onDeviceReady() {
-                //// Handle the Cordova pause and resume events
-                console.log(navigator.camera);
-                navigator.camera.cleanup(onSuccess, onFail);
-            };
-
-            // Show image
-            //
-            /**
-             * Warning: Using DATA_URL is not recommended! The DATA_URL destination
-             * type is very memory intensive, even with a low quality setting. Using it
-             * can result in out of memory errors and application crashes. Use FILE_URI
-             * or NATIVE_URI instead.
-             */
-            $(function () {
-                $(document).find("#btnStartCamera").click(function () {
-                    alert("Starting camera...");
-
-                    navigator.camera.getPicture(onSuccessPick, onFail, {
-                        quality: 25,
-                        destinationType: navigator.camera.DestinationType.DATA_URL
-                    });
-                });
-            });
-
-            function onSuccessPick(imageData) {
-                var image = document.getElementById('testCameraBox');
-                image.src = "data:image/jpeg;base64," + imageData;
-            }
-
-            function onSuccess() {
-                console.log("Camera cleanup success.");
-            }
-
-            function onFail(message) {
-                alert('Failed because: ' + message);
-            }
-        })();
-
-        
-    </script>
+    <script src="../../scripts/initCamera.js"></script>
 </body>
 </html>

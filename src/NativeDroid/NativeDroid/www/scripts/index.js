@@ -8,17 +8,8 @@
     document.addEventListener("deviceready", onDeviceReady, false);
 
     function onDeviceReady() {
-        //// Handle the Cordova pause and resume events
-        console.log(navigator.camera);
-        navigator.camera.cleanup(onSuccess, onFail);
-    };
-   
+        // Handle the Cordova pause and resume events        
+    };  
 
-    function onSuccess() {
-        console.log("Camera cleanup success.");
-    }
 
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
 })();
